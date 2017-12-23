@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+<title>Help Me! Linux</title>
+<meta charset="UTF-8">
+<meta name="author" content="Josh Pickard">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../flow.css">
+<link rel="stylesheet" type="text/css" href="c2.css"> 
+
+</head>
+<body><div id="container">
+		<div id="content">
+		<header id="site">
+			<!--To be displayed on every page above the post header.-->
+			<!--Title over background image. Above a same colored navbar that appears to be a part of the image-->
+<br><br>  
+		<h3>The Open Source | How and Why</h3> 
+		<!-- Navbar at bottom of site header--> 
+		 <div style="float: right">   
+			<ul class="topnav">                                    
+				<li><a href="../index.html">Home</a></li> 
+				<li><a href="#">About Me</a></li>
+				<li><a href="#">Contact</a></li> 
+				<li><a href="#">Links</a></li>
+			</ul> 
+		</div> 
+		</header>     
+		<header id="pst"> 
+	<h2>How to Use the Echo Command</h2> 
+</header>
+			<aside>
+				<h4>Blog</h4>
+					<ul class="sidenav">
+						<!-- Navigation links -->
+				<li><a href="../mft/mft.html">My First Thoughts</a></li> 
+				<li><a href="../whyno/whyno.html">Why Not Linux?</a></li>
+				<li><a href="../wil/wil.html">What Is Linux?</a></li> 
+				<li><a href="../plunge/plunge.html">Plunge into the Open</a></li> 
+					</ul>
+				<h4>Tutorials</h4>
+				<ul class="sidenav">
+						<!-- Navigation links -->
+				<li><a href="../echo/echo.html">How To Use The Echo Command</a></li> 
+					</ul>
+			</aside>
+			<article>  
+				<h1>Repeat After Me</h1> 
+				<img src="echolove.jpg" alt="Put some love in life" title="Echo love into your life!" width="100%" max-height="450px">
+				<p>Let's discuss a little Linux right now. For those of you who use linux, freebsd, or any unix-like OS you've probably seen the echo command before. Other than getting your terminal to re-print something you just typed into it, which I'm not sure why you'd need that, what could this command be used for?</p>
+				<img src="hilove.png" width="50%">	
+				<p>Let me preface this with a warning. Always read and understand commands you're entering in to your system. There was a time I chose to be careless and I'm lucky I was never adversely affected. I've used the echo command during installs where I wasn't sure of the context or effect. I was copying and pasting scripts to from the install tutorial and I was trusting my tutor was both knowledgable and well-intentioned.  My I grew curious enough and I dug into what a pragmatic person might need this utility for. I found out that I wasn't just yelling a command into the terminal cavern and listening to the response before I finished installing my program. </p>
+       			
+       			<p> Coupled with other commands "echo" can become quite versatile and useful. One of which is the " >> " command. This is the straight-forward use that pushes the echoed text into a document mentioned after the arrows. The combination I usually use, though, is "tee" with "echo" in mostly the same format as previously mentioned for the arrows. The "tee" command is slightly more complicated but much more versatile. Using arguments you can dictate whether it replaces text or amends to the end of a document. The other useful funtion is being able to raise the command to sudo and edit files owned by root, or that are write protected. A good example of this, and one way I've used it, is to edit the crontab. Cron is used for scheduling commands or scripts to run automatically and periodically. Using the above mentioned commands the crontab can be edited directly from the cli without opening a text editor. Maybe.. As part of a larger install script for instance. </p>
+       			
+       			<p> To write an amendment to the end of the crontab file you echo your desired phrase. Obviously following the correct format for cron. </p>
+				
+				<div style="background:black;color:green;max-width:50%;margin:auto;font-size:20px;"><p><code><strong>echo "1 5 *** root rsync -az --delete /home/user/dir /back/up/location/" | sudo tee -a /etc/crontab</strong></code></p></div>
+
+				<p>The previous example command will do as follows. It will echo the in-quoted words, piped into "tee" to amend (-a) to the end of the /etc/crontab file. Well that's just created a simplistic but periodic backup. All with one command. This can easily create credintials documents. <div style="background:black;color:green;margin:auto;font-size:20px;"><p><code><strong>touch creds.txt; echo <q>username=<i>name</i>\npassword=<i>passwd</i>\ngroup=<i>groupname</i></q> | sudo tee creds.txt</p></code></strong></div>
+<p>PPA source files. Print the output of commands into files to be saved. The list goes on. Which means that you don't have to open a text editor and write it up. Which means, lastly, that you can install that software with one beautiful, perfectly crafted, lengthy, yet concise command without stopping in the middle to take care of an init.d file to run at startup. It becomes just another part the script. Happy bashing!</p> 
+        	</article>
+		</div>
+		<footer> 
+				<address>
+						Written by <a href="mailto:distraxdevel@gmail.com">Josh Pickard</a>.<br>
+				</address>
+						<p>&#169; Copyright 2017 HelpMe!Linux.com a.k.a. LinuxHelp.sytes.net</p>
+						<p style="font-size: 12px;">Re-Published 12/21/2017 - How to Use the Echo Command</p>
+		</footer>
+</div></body>
+
+
+
+
+
+</html>
